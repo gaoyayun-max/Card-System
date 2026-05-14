@@ -1,0 +1,6 @@
+{
+  "name": "企业名片自助生成工具",
+  "description": "一个高精度、自动化的企业名片定制工具，支持实时预览、高清下载及行政邮件推送功能。",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
