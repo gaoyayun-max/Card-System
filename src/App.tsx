@@ -680,7 +680,7 @@ export default function App() {
       <main className="flex-1 flex overflow-hidden">
         {/* Sidebar Inputs */}
         <aside className="w-[400px] bg-white border-r border-slate-200 flex flex-col shrink-0">
-          <div className="p-6 border-b border-slate-100 bg-slate-50/50">
+          <div className="p-4 border-b border-slate-100 bg-slate-50/50">
             <div className="flex items-center gap-2 text-slate-500 mb-1">
               <Settings2 size={16} />
               <span className="text-xs font-bold uppercase tracking-wider">信息录入</span>
@@ -688,7 +688,7 @@ export default function App() {
             <p className="text-sm text-slate-500">填写您的职业信息，实时预览名片效果</p>
           </div>
           
-          <div className="flex-1 overflow-y-auto p-6 grid grid-cols-2 gap-x-4 gap-y-4 content-start">
+          <div className="flex-1 overflow-y-auto p-4 lg:p-5 grid grid-cols-2 gap-x-3 gap-y-3 content-start">
             {[
               { label: '姓名', key: 'name', icon: null },
               { label: '英文名', key: 'englishName', icon: null },
@@ -702,7 +702,7 @@ export default function App() {
               { label: '英文办公地址', key: 'englishAddress', icon: <MapPin size={14} />, span: 2 },
             ].map((field) => (
               <div key={field.key} className={`space-y-1.5 ${field.span === 2 ? 'col-span-2' : 'col-span-1'}`}>
-                <label className="text-sm font-semibold text-slate-700 flex items-center gap-2">
+                <label className="text-xs font-semibold text-slate-700 flex items-center gap-1.5">
                   {field.label}
                 </label>
                 {field.key === 'address' || field.key === 'englishAddress' ? (
@@ -726,7 +726,7 @@ export default function App() {
                         }
                       }
                     }}
-                    className="w-full px-3 py-2 rounded-lg border border-slate-200 focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all outline-none text-slate-700 bg-white"
+                    className="w-full px-2.5 py-1.5 text-sm rounded-lg border border-slate-200 focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all outline-none text-slate-700 bg-white"
                   >
                     <option value="" disabled>请选择{field.label}</option>
                     {field.key === 'address' ? ADDRESS_OPTIONS.map(opt => (
@@ -740,7 +740,7 @@ export default function App() {
                     type="text"
                     value={(data as any)[field.key]}
                     onChange={(e) => setData({ ...data, [field.key]: e.target.value })}
-                    className="w-full px-3 py-2 rounded-lg border border-slate-200 focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all outline-none text-slate-700 placeholder:text-slate-400"
+                    className="w-full px-2.5 py-1.5 text-sm rounded-lg border border-slate-200 focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all outline-none text-slate-700 placeholder:text-slate-400"
                     placeholder={
                       field.key === 'website' ? '默认: ir.cangoonline.com' :
                       field.key === 'company' ? '默认: Cango Inc.' :
@@ -752,7 +752,7 @@ export default function App() {
             ))}
           </div>
 
-          <div className="p-6 border-t border-slate-100 grid grid-cols-2 gap-3 shrink-0">
+          <div className="p-4 border-t border-slate-100 grid grid-cols-2 gap-3 shrink-0">
             <button 
               onClick={resetData}
               className="px-4 py-3 rounded-xl border border-slate-200 text-slate-600 font-semibold text-sm flex items-center justify-center gap-2 hover:bg-slate-50 transition-colors"
