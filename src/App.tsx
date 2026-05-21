@@ -602,7 +602,7 @@ export default function App() {
   const padding = 120; // 40px * 3 for scale
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] flex flex-col font-sans text-slate-800">
+    <div className="h-screen overflow-hidden bg-[#F8FAFC] flex flex-col font-sans text-slate-800">
       {/* Top Header / Template Selector */}
       <header className="h-20 bg-white border-b border-slate-200 px-8 flex items-center justify-between sticky top-0 z-10 w-full overflow-x-auto">
         <div className="flex items-center gap-3 shrink-0">
