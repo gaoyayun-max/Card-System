@@ -780,9 +780,10 @@ export default function App() {
               <div className="absolute bottom-[-10%] left-[-10%] w-[30%] h-[30%] bg-orange-400/20 blur-[100px] rounded-full" />
             </div>
 
-            <div className="flex flex-col gap-4 lg:gap-6 w-full max-w-[800px] items-center z-10 shrink-0">
+            <div className="flex flex-col gap-6 lg:gap-8 w-full max-w-[1200px] items-center justify-center z-10 shrink-0">
+              <div className="flex flex-col xl:flex-row gap-8 lg:gap-12 w-full justify-center items-center">
             {/* FRONT CARD */}
-            <div className="relative group w-full max-w-[360px] lg:max-w-[420px] xl:max-w-[460px] shrink-0">
+            <div className="relative group w-full max-w-[360px] lg:max-w-[420px] xl:max-w-[480px] shrink-0">
               <div className="absolute -inset-4 bg-gradient-to-r from-slate-200 to-slate-300 rounded-[24px] blur opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200 pointer-events-none"></div>
               <div className="absolute -left-12 top-1/2 -translate-y-1/2 text-slate-400 text-sm font-bold tracking-widest uppercase" style={{ writingMode: 'vertical-rl' }}>正面 (Front)</div>
               
@@ -864,9 +865,9 @@ export default function App() {
             </div>
 
             {/* BACK CARD */}
-            <div className="relative group w-full max-w-[360px] lg:max-w-[420px] xl:max-w-[460px] shrink-0">
+            <div className="relative group w-full max-w-[360px] lg:max-w-[420px] xl:max-w-[480px] shrink-0">
               <div className="absolute -inset-4 bg-gradient-to-r from-slate-200 to-slate-300 rounded-[24px] blur opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200 pointer-events-none"></div>
-              <div className="absolute -left-12 top-1/2 -translate-y-1/2 text-slate-400 text-sm font-bold tracking-widest uppercase" style={{ writingMode: 'vertical-rl' }}>背面 (Back)</div>
+              <div className="absolute -left-12 top-1/2 -translate-y-1/2 text-slate-400 text-sm font-bold tracking-widest uppercase xl:left-auto xl:-right-12" style={{ writingMode: 'vertical-rl' }}>背面 (Back)</div>
               
               <motion.div 
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -910,6 +911,7 @@ export default function App() {
                   </svg>
                 )}
               </motion.div>
+            </div>
             </div>
             
             <div className="flex flex-col items-center gap-3 mt-4 z-10 shrink-0">
