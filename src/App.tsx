@@ -679,7 +679,7 @@ export default function App() {
 
       <main className="flex-1 flex overflow-hidden">
         {/* Sidebar Inputs */}
-        <aside className="w-[400px] bg-white border-r border-slate-200 flex flex-col shrink-0">
+        <aside className="w-[480px] bg-white border-r border-slate-200 flex flex-col shrink-0">
           <div className="p-4 border-b border-slate-100 bg-slate-50/50">
             <div className="flex items-center gap-2 text-slate-500 mb-1">
               <Settings2 size={16} />
@@ -772,22 +772,22 @@ export default function App() {
         </aside>
 
         {/* Preview Area (Shows both front and back) */}
-        <section className="flex-1 bg-slate-100 flex flex-col items-center justify-start p-12 relative overflow-y-auto">
+        <section className="flex-1 bg-slate-100 flex flex-col items-center justify-center p-6 lg:p-10 relative overflow-y-auto min-h-0">
           {/* Decorative backgrounds */}
           <div className="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none">
             <div className="absolute top-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-400/20 blur-[120px] rounded-full" />
             <div className="absolute bottom-[-10%] left-[-10%] w-[30%] h-[30%] bg-orange-400/20 blur-[100px] rounded-full" />
           </div>
 
-          <div className="flex flex-col gap-12 w-full items-center pb-12">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 w-full max-w-[1400px] items-center justify-center z-10 shrink-0">
             {/* FRONT CARD */}
-            <div className="relative group w-full max-w-[600px]">
+            <div className="relative group w-full max-w-[550px] lg:w-1/2 flex-1">
               <div className="absolute -inset-4 bg-gradient-to-r from-slate-200 to-slate-300 rounded-[24px] blur opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200 pointer-events-none"></div>
               <div className="absolute -left-12 top-1/2 -translate-y-1/2 text-slate-400 text-sm font-bold tracking-widest uppercase rotate-180" style={{ writingMode: 'vertical-rl' }}>正面 (Front)</div>
               
               <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
                 className="relative bg-white shadow-2xl overflow-hidden rounded-[8px]"
                 style={{ width: '100%', aspectRatio: '3.5/2' }}
               >
@@ -863,13 +863,13 @@ export default function App() {
             </div>
 
             {/* BACK CARD */}
-            <div className="relative group w-full max-w-[600px]">
+            <div className="relative group w-full max-w-[550px] lg:w-1/2 flex-1">
               <div className="absolute -inset-4 bg-gradient-to-r from-slate-200 to-slate-300 rounded-[24px] blur opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200 pointer-events-none"></div>
-              <div className="absolute -left-12 top-1/2 -translate-y-1/2 text-slate-400 text-sm font-bold tracking-widest uppercase rotate-180" style={{ writingMode: 'vertical-rl' }}>背面 (Back)</div>
+              <div className="absolute -left-12 top-1/2 -translate-y-1/2 text-slate-400 text-sm font-bold tracking-widest uppercase rotate-180 lg:left-auto lg:-right-12 lg:rotate-90" style={{ writingMode: 'vertical-rl' }}>背面 (Back)</div>
               
               <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
                 className="relative bg-white shadow-2xl overflow-hidden rounded-[8px]"
                 style={{ width: '100%', aspectRatio: '3.5/2' }}
               >
@@ -910,17 +910,17 @@ export default function App() {
                 )}
               </motion.div>
             </div>
+          </div>
 
-            <div className="flex flex-col items-center gap-4 mt-8">
-              <p className="text-slate-400 text-sm font-medium">纯矢量 SVG 渲染，完美支持无损放大及专业印刷</p>
-              <button 
-                onClick={handleDownload}
-                className="group flex items-center gap-3 bg-white text-slate-900 px-8 py-4 rounded-2xl shadow-sm hover:shadow-md transition-all border border-slate-200 font-bold"
-              >
-                <Download size={20} className="group-hover:translate-y-0.5 transition-transform" />
-                下载正反面打印级 SVG
-              </button>
-            </div>
+          <div className="flex flex-col items-center gap-4 mt-8 z-10 shrink-0">
+            <p className="text-slate-400 text-sm font-medium">纯矢量 SVG 渲染，完美支持无损放大及专业印刷</p>
+            <button 
+              onClick={handleDownload}
+              className="group flex items-center gap-3 bg-white text-slate-900 px-8 py-3 rounded-2xl shadow-sm hover:shadow-md transition-all border border-slate-200 font-bold"
+            >
+              <Download size={20} className="group-hover:translate-y-0.5 transition-transform" />
+              下载正反面打印级 SVG
+            </button>
           </div>
 
           {/* Success Notification */}
