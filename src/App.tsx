@@ -609,7 +609,7 @@ export default function App() {
           <div className="w-10 h-10 bg-slate-900 rounded-xl flex items-center justify-center text-white">
             <Layout size={20} />
           </div>
-          <h1 className="text-xl font-bold tracking-tight">员工名片自助生成系统</h1>
+          <h1 className="text-xl font-bold tracking-tight">Cango名片自助生成系统</h1>
         </div>
 
         <div className="flex items-center gap-4 shrink-0 pl-8">
@@ -688,20 +688,20 @@ export default function App() {
             <p className="text-sm text-slate-500">填写您的职业信息，实时预览名片效果</p>
           </div>
           
-          <div className="flex-1 overflow-y-auto p-6 space-y-5">
+          <div className="flex-1 overflow-y-auto p-6 grid grid-cols-2 gap-x-4 gap-y-4 content-start">
             {[
-              { label: '公司名称', key: 'company', icon: <Plus size={14} /> },
               { label: '姓名', key: 'name', icon: null },
               { label: '英文名', key: 'englishName', icon: null },
               { label: '职位', key: 'title', icon: null },
               { label: '英文职位', key: 'englishTitle', icon: null },
               { label: '电话', key: 'phone', icon: <Phone size={14} /> },
               { label: '邮箱', key: 'email', icon: <Mail size={14} /> },
-              { label: '办公地址', key: 'address', icon: <MapPin size={14} /> },
-              { label: '英文办公地址', key: 'englishAddress', icon: <MapPin size={14} /> },
+              { label: '公司名称', key: 'company', icon: <Plus size={14} /> },
               { label: '官方网址', key: 'website', icon: <Globe size={14} /> },
+              { label: '办公地址', key: 'address', icon: <MapPin size={14} />, span: 2 },
+              { label: '英文办公地址', key: 'englishAddress', icon: <MapPin size={14} />, span: 2 },
             ].map((field) => (
-              <div key={field.key} className="space-y-1.5">
+              <div key={field.key} className={`space-y-1.5 ${field.span === 2 ? 'col-span-2' : 'col-span-1'}`}>
                 <label className="text-sm font-semibold text-slate-700 flex items-center gap-2">
                   {field.label}
                 </label>
@@ -726,7 +726,7 @@ export default function App() {
                         }
                       }
                     }}
-                    className="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all outline-none text-slate-700 bg-white"
+                    className="w-full px-3 py-2 rounded-lg border border-slate-200 focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all outline-none text-slate-700 bg-white"
                   >
                     <option value="" disabled>请选择{field.label}</option>
                     {field.key === 'address' ? ADDRESS_OPTIONS.map(opt => (
@@ -740,7 +740,7 @@ export default function App() {
                     type="text"
                     value={(data as any)[field.key]}
                     onChange={(e) => setData({ ...data, [field.key]: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all outline-none text-slate-700 placeholder:text-slate-400"
+                    className="w-full px-3 py-2 rounded-lg border border-slate-200 focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all outline-none text-slate-700 placeholder:text-slate-400"
                     placeholder={
                       field.key === 'website' ? '默认: ir.cangoonline.com' :
                       field.key === 'company' ? '默认: Cango Inc.' :
